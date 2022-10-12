@@ -2,15 +2,31 @@ package com.esd.develop;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.reactive.function.client.WebClient;
+import org.springframework.web.reactive.function.client.WebClient.Builder;
+
+import com.esd.develop.model.Angle;
 
 public class RestCall {
+	
+
 
 	public static void main(String[] args) {
+		
 		 RestTemplate restTemplate = new RestTemplate();
 		 Angle angle = restTemplate.getForObject("http://localhost:8181/getAngleById/{id}", Angle.class,21);
-		 System.out.println("Country Name:"+angle.getAddress());
-		 System.out.println("Population:"+angle.getEmail()); 
+		 
+		 System.out.println("angle Name :"+angle.getEmail()); 
+		 
+		 
+		
+		 
+
+		 
+		 
+		 
 		 
 		 /*
 		  final String uri = "http://localhost:8181/addAngle";
